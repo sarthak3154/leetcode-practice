@@ -7,7 +7,7 @@ public class ContainerWithMostWater {
      * @param height
      * @return
      */
-    public int maxArea(int[] height) {
+    public int maxAreaSolutionOne(int[] height) {
         int maxArea = Integer.MIN_VALUE;
         for (int i = 0; i < height.length; i++) {
             for (int j = i + 1; j < height.length; j++) {
@@ -17,6 +17,36 @@ public class ContainerWithMostWater {
                 }
             }
         }
+        return maxArea;
+    }
+
+    /**
+     * 2nd Solution
+     *
+     * @param height
+     * @return
+     */
+    public int maxArea(int[] height) {
+        int i = 0, j = height.length - 1;
+        int maxArea = Integer.MIN_VALUE;
+
+        while (i < j) {
+            int area = (j - i) * Math.min(height[i], height[j]);
+            maxArea = Math.max(maxArea, area);
+
+            if (height[i] <= height[j]) {
+                int leftHeight = height[i];
+                while (i < j && height[i] <= leftHeight) {
+                    i++;
+                }
+            } else {
+                int rightHeight = height[j];
+                while (i < j && height[j] <= rightHeight) {
+                    j--;
+                }
+            }
+        }
+
         return maxArea;
     }
 
