@@ -6,6 +6,13 @@ import java.util.List;
 import java.util.Stack;
 
 public class PostOrderTraversal {
+    /**
+     * Solution - Iteratively
+     * Left -> Right -> Root
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> postorderTraversal(TreeNode root) {
         TreeNode current = root;
 

@@ -7,6 +7,13 @@ import java.util.Stack;
 
 public class InorderTraversal {
 
+    /**
+     * Solution - Iteratively
+     * Left -> Root -> Right
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> inorderTraversal(TreeNode root) {
         TreeNode current = root;
         List<Integer> inorderList = new ArrayList<>();

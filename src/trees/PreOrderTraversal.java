@@ -7,6 +7,7 @@ import java.util.Stack;
 public class PreOrderTraversal {
     /**
      * Solution - Iteratively
+     * Root -> Left -> Right
      *
      * @param root
      * @return
